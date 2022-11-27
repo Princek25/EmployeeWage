@@ -13,14 +13,16 @@ public class EmployeeWage {
         System.out.println(empCheck);
         int empWage = 0;
 
-        if (empCheck==IS_FULL_TIME){
-            System.out.println("Employee is Full Time");
-            empWage = WAGE_PER_HOUR*FULL_DAY_HOURS;
-        } else if (empCheck==IS_PART_TIME) {
-            System.out.println("Employee is Part Time");
-            empWage = WAGE_PER_HOUR*PART_TIME_HOURS;
-        } else {
-            System.out.println("Employee is Absent");
+        switch (empCheck){
+            case IS_FULL_TIME:
+                System.out.println("Employee is Full Time");
+                empWage = WAGE_PER_HOUR*FULL_DAY_HOURS;
+                break;
+            case IS_PART_TIME:
+                System.out.println("Employee is Part Time");
+                empWage = WAGE_PER_HOUR*PART_TIME_HOURS;
+                break;
+            default: System.out.println("Employee is Absent");
         }
         System.out.println("Employee Wage:- " + empWage);
     }
